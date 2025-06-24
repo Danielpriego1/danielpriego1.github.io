@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grupo Psindustrial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1c1c1c;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #00ff88;
+    }
+    #frase {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-bottom: 40px;
+      transition: opacity 1s ease-in-out;
+    }
+    .btn {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 1em;
+      background-color: #018241;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background-color: #026c35;
+    }
+    .footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>Grupo Psindustrial</h1>
+  <div id="frase">Nuestra misión es que tu trabajo sea más seguro.</div>
+
+  <a href="/" class="btn">Cotizar</a>
+  <a href="https://checkout.stripe.com/" class="btn">Comprar</a>
+  <a href="https://calendly.com/grupopsi" class="btn">Agendar</a>
+  <a href="https://wa.me/529141009921" class="btn">WhatsApp</a>
+  <a href="/facturacion/" class="btn">Facturar</a>
+
+  <div class="footer">
+    Grupo PSI • Brexon • Nemexa<br>
+    Compatible con Stripe, PayPal, OXXO, Apple Pay, Google Pay
+  </div>
+
+  <script>
+    const frases = [
+      "Nuestra misión es que tu trabajo sea más seguro.",
+      "Cuando la lógica no alcanza a razonar, el instinto ya sabe la respuesta.",
+      "El cliente tiene 72 horas para facturar. Pasado ese tiempo, la venta se considera de mostrador."
+    ];
+    let index = 0;
+    setInterval(() => {
+      const el = document.getElementById("frase");
+      el.style.opacity = 0;
+      setTimeout(() => {
+        index = (index + 1) % frases.length;
+        el.textContent = frases[index];
+        el.style.opacity = 1;
+      }, 500);
+    }, 6000);
+  </script>
+</body>
+</html>
